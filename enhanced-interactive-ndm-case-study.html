@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Interactive National Decision Model - Officer Misconduct Case Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .ndm-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 40px auto;
+        }
+        .ndm-circle {
+            width: 100%;
+            height: 100%;
+            border: 3px solid #3498db;
+            border-radius: 50%;
+            position: relative;
+        }
+        .ndm-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .ndm-step {
+            position: absolute;
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .ndm-step:hover {
+            transform: scale(1.05);
+        }
+        .ndm-step h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        #step1 { top: 10%; left: 50%; transform: translateX(-50%); background-color: #BFDBFE; }
+        #step2 { top: 30%; right: 5%; background-color: #FCA5A5; }
+        #step3 { bottom: 30%; right: 5%; background-color: #FDE68A; }
+        #step4 { bottom: 30%; left: 5%; background-color: #C7D2FE; }
+        #step5 { top: 30%; left: 5%; background-color: #A7F3D0; }
+        .content-display {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>National Decision Model - Officer Misconduct Case Study</h1>
+    <p>This is a serious situation that requires immediate and careful handling. Let's apply the National Decision Model (NDM) to address this misconduct case involving an officer and a domestic violence victim.</p>
+    <p>Click on each step of the NDM to see both general guidance and its application to the officer misconduct case.</p>
+    
+    <div class="ndm-container">
+        <div class="ndm-circle"></div>
+        <div class="ndm-center" onclick="showContent('ethics')">Code of Ethics</div>
+        <div id="step1" class="ndm-step" onclick="showContent(1)">
+            <h3>1. Gather information and intelligence</h3>
+        </div>
+        <div id="step2" class="ndm-step" onclick="showContent(2)">
+            <h3>2. Assess threat and risk</h3>
+        </div>
+        <div id="step3" class="ndm-step" onclick="showContent(3)">
+            <h3>3. Consider powers and policy</h3>
+        </div>
+        <div id="step4" class="ndm-step" onclick="showContent(4)">
+            <h3>4. Identify options and contingencies</h3>
+        </div>
+        <div id="step5" class="ndm-step" onclick="showContent(5)">
+            <h3>5. Take action and review</h3>
+        </div>
+    </div>
+
+    <div id="contentDisplay" class="content-display" style="display:none;">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'General')">General Guidance</button>
+            <button class="tablinks" onclick="openTab(event, 'CaseStudy')">Case Study Application</button>
+        </div>
+
+        <div id="General" class="tabcontent"></div>
+        <div id="CaseStudy" class="tabcontent"></div>
+    </div>
+
+    <script>
+        const content = {
+            ethics: {
+                general: "<h3>Code of Ethics</h3><p>The Code of Ethics is central to all decision-making in the NDM process. It guides officer behavior and ensures decisions are ethical and in line with policing values.</p>",
+                caseStudy: "<h3>Code of Ethics in the Misconduct Case</h3><p>The officer's actions appear to violate multiple aspects of the Code of Ethics, including integrity, honesty, and respect for human rights. This ethical breach forms the foundation for the severity of the misconduct and the urgency of the response.</p>"
+            },
+            1: {
+                general: "<h3>Gather information and intelligence</h3><ul><li>Ask the right questions to establish the information, and where the gaps are</li><li>Identify any links to Force priorities etc</li><li>Tasks out for further info/intel where necessary</li></ul>",
+                caseStudy: "<h3>Gathering Information in the Misconduct Case</h3><h4>Key Information:</h4><ul><li>Incident: Officer engaging in sexual relationship with domestic violence victim</li><li>How discovered: Not specified, needs to be determined</li><li>Misconduct details:<ul><li>Sexual relationship with victim</li><li>Sharing confidential case information</li><li>Spending unusual amount of off-duty time at victim's residence</li></ul></li><li>Potential breaches:<ul><li>Professional standards</li><li>Data protection laws</li><li>Abuse of position for sexual purpose</li></ul></li></ul><h4>Information to gather:</h4><ul><li>Identity of the officer involved</li><li>Details of the domestic violence case</li><li>Timeline of events (initial call, development of relationship)</li><li>Nature of confidential information shared</li><li>Frequency and duration of off-duty visits</li><li>Any witnesses or additional evidence</li><li>Officer's service record and any previous misconduct</li><li>Impact on the domestic violence case and victim's safety</li><li>Whether the behavior has affected other cases or victims</li></ul><h4>Actions:</h4><ul><li>Interview relevant colleagues and supervisors</li><li>Review officer's duty logs and communication records</li><li>Examine any CCTV or body-worn camera footage</li><li>Check for any complaints or concerns raised by other officers or the public</li></ul>"
+            },
+            2: {
+                general: "<h3>Assess threat and risk, and develop a working strategy</h3><ul><li>Identifies, assesses and articulates the risk and threat in a cohesive fashion, considering vulnerabilities</li><li>Prioritises activity based on the threat, harm and risk</li><li>Ensures ownership, plans/working strategy, reviews and updates are in place</li><li>Refers to Gold / CIM where appropriate but holds risk appropriately too</li><li>Considers the short, medium and long term where appropriate</li></ul>",
+                caseStudy: "<h3>Assessing Threat and Risk in the Misconduct Case</h3><p>This is a high-risk situation due to:</p><ul><li>Potential compromise of the domestic violence case</li><li>Risk to the victim's safety and wellbeing</li><li>Serious breach of professional standards and public trust</li><li>Possible criminal offenses (misconduct in public office, data protection breaches)</li></ul><p>Develop a strategy focusing on:</p><ol><li>Immediate safeguarding of the victim</li><li>Preserving evidence for investigation</li><li>Maintaining integrity of the original domestic violence case</li><li>Addressing the officer's misconduct</li></ol>"
+            },
+            3: {
+                general: "<h3>Consider powers and policy</h3><ul><li>Understands the relevant Force policies that apply</li><li>Do they consider using legislation?</li><li>What other police powers might be required. Do they think widely?</li><li>Is there any other guidance or legislation that might apply?</li></ul>",
+                caseStudy: "<h3>Considering Powers and Policy in the Misconduct Case</h3><ul><li>Review force policies on officer conduct, relationships with victims, and handling of confidential information</li><li>Consider powers under the Police (Conduct) Regulations 2020</li><li>Assess potential criminal offenses (misconduct in public office, data protection breaches)</li><li>Review IOPC (Independent Office for Police Conduct) guidelines for handling such cases</li></ul>"
+            },
+            4: {
+                general: "<h3>Identify options and contingencies</h3><ul><li>Do they understand what they need to command and what they can delegate to others?</li><li>How will they allocate resources and deployment?</li><li>Have they considered a range of tactical options?</li><li>Do they consider the Code of Ethics and do the right thing?</li></ul>",
+                caseStudy: "<h3>Identifying Options in the Misconduct Case</h3><ul><li>Immediate suspension of the officer from duty</li><li>Referral to the IOPC for independent investigation</li><li>Internal professional standards investigation</li><li>Reassignment of the domestic violence case to a new officer/team</li><li>Review of other cases handled by the officer for potential similar misconduct</li><li>Prepare for potential media interest and reputational impact</li></ul>"
+            },
+            5: {
+                general: "<h3>Take action and review what happened</h3><ul><li>What will they do immediately to address the problems?</li><li>Do they consider working with partners / stakeholders</li><li>Do they recognise how the effectiveness the police response may have an impact on public confidence?</li><li>Do they consider reputational risk in any of the incidents?</li><li>Do they consider the impact of their decisions on communities?</li><li>Do they consider diversity and inclusion when making decisions?</li><li>How would they record their actions and decisions?</li><li>Do they set out timescales or triggers for when they will review their plan of action and progress?</li></ul>",
+                caseStudy: "<h3>Taking Action in the Misconduct Case</h3><h4>Action Plan:</h4><ol><li>Immediate Actions:<ul><li>Suspend the officer from duty pending investigation</li><li>Secure all relevant evidence (emails, duty logs, CCTV footage)</li><li>Reassign the domestic violence case to a new officer/team</li><li>Implement safeguarding measures for the victim</li></ul></li><li>Investigation:<ul><li>Refer the case to the IOPC for independent investigation</li><li>Initiate internal professional standards investigation</li><li>Interview all relevant parties (officer, victim, colleagues)</li><li>Review all cases handled by the officer for similar misconduct</li></ul></li><li>Legal Considerations:<ul><li>Consult with Crown Prosecution Service regarding potential criminal charges</li><li>Ensure compliance with data protection laws during investigation</li></ul></li><li>Victim Support:<ul><li>Provide appropriate support and counseling for the victim</li><li>Ensure victim is fully informed of their rights and the investigation process</li></ul></li><li>Organizational Response:<ul><li>Review and reinforce policies on officer-victim relationships</li><li>Conduct refresher training on professional boundaries and ethics</li><li>Prepare internal and external communications strategy</li></ul></li><li>Ongoing Actions:<ul><li>Regular case reviews and updates to senior management</li><li>Monitor for any media interest or public concerns</li><li>Ensure welfare support for all officers involved in the investigation</li></ul></li><li>Review:<ul><li>Set review periods to reassess the situation and strategy</li><li>Document all decisions, actions, and rationales</li><li>Prepare final report with recommendations for preventing future incidents</li></ul></li></ol><h4>Throughout this process:</h4><ul><li>Maintain strict confidentiality to protect the integrity of the investigation</li><li>Ensure all actions are lawful, necessary, and proportionate</li><li>Keep relevant parties informed as appropriate, including senior management and the Police and Crime Commissioner</li><li>Be prepared to cooperate fully with any IOPC investigation</li><li>Consider the wider implications for public trust and confidence in policing</li></ul><p>This situation requires a delicate balance between addressing the officer's misconduct, safeguarding the victim, preserving the integrity of the original domestic violence case, and maintaining public confidence in the police force. The NDM should be applied continuously throughout the process, reassessing and adjusting the approach as new information comes to light.</p>"
+            }
+        };
+
+        function showContent(step) {
+            document.getElementById('contentDisplay').style.display = 'block';
+            document.getElementById('General').innerHTML = content[step].general;
+            document.getElementById('CaseStudy').innerHTML = content[step].caseStudy;
+            document.getElementsByClassName('tablinks')[0].click();
+        }
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
